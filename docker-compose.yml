@@ -1,0 +1,20 @@
+version: "3"
+
+volumes:
+  administrative_panel_db:
+    driver: local
+
+services:
+  db:
+    image: postgres:latest
+    container_name: administrative_panel_db
+    volumes:
+      - administrative_panel_db:/var/lib/postgresql/data
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    environment:
+      POSTGRES_DB: administrative_panel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5433:5432

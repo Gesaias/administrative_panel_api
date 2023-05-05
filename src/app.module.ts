@@ -7,6 +7,7 @@ import { DatabaseModule } from './database/database.module';
 import { JwtAuthGuard } from './app/auth/guards/jwt-auth.guard';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthModule } from './app/auth/auth.module';
+import { AirportModule } from './app/airport/airport.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { AuthModule } from './app/auth/auth.module';
     DatabaseModule,
     UserModule,
     AuthModule,
+    AirportModule,
   ],
   controllers: [AppController],
   providers: [
